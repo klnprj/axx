@@ -31,6 +31,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/logs ]
 fi
 
 cd $OPENSHIFT_REPO_DIR
+# rem
 export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
 export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-2.6
 export GRADLE_OPTS="-Xms384m -Xmx412m"
