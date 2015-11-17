@@ -2,5 +2,7 @@ package com.axx
 
 class CameraController {
 
-    def index() { }
+    def index() {
+        [items: Camera.list()]
+    }
 }

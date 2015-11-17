@@ -96,7 +96,11 @@ environments:
     production:
         dataSource:
             dbCreate: update
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:postgresql://127.7.102.130:5432/axx
+            driverClassName: org.postgresql.Driver
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+            username: adminkpkypmh
+            password: _5A5qCxCIUpl
             properties:
                 jmxEnabled: true
                 initialSize: 5
@@ -115,3 +119,4 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
