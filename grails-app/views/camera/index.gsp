@@ -1221,9 +1221,11 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="note note-info">
                         <p> A black page template with a minimal dependency assets to use as a base for any custom page you create </p>
                     </div>
-                <div class="row">
-                    ${items[0].name}
-                </div>
+                <g:each in="${items}" var="camera">
+                    <div class="row">
+                        ${camera.name}
+                    </div>
+                </g:each>
                 </div>
                 <!-- END PAGE CONTENT INNER -->
             </div>

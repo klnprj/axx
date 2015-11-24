@@ -17,40 +17,40 @@ buildscript {
 }
 
 plugins {
-    id "io.spring.dependency-management" version "0.5.2.RELEASE"
+	id 'io.spring.dependency-management' version '0.5.2.RELEASE'
 }
 
-version "0.1"
-group "axx"
+version '0.1'
+group 'com.axx'
 
-apply plugin: "spring-boot"
-apply plugin: "war"
-apply plugin: "asset-pipeline"
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+apply plugin: 'asset-pipeline'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: "org.grails.grails-web"
-apply plugin: "org.grails.grails-gsp"
+apply plugin: 'org.grails.grails-web'
+apply plugin: 'org.grails.grails-gsp'
 
 ext {
-    grailsVersion = project.grailsVersion
-    gradleWrapperVersion = project.gradleWrapperVersion
+	grailsVersion = project.grailsVersion
+	gradleWrapperVersion = project.gradleWrapperVersion
 }
 
 assets {
-    minifyJs = true
-    minifyCss = true
+	minifyJs = true
+	minifyCss = true
 }
 
 repositories {
-    mavenLocal()
-    maven { url "https://repo.grails.org/grails/core" }
+	mavenLocal()
+	maven { url 'https://repo.grails.org/grails/core' }
 }
 
 dependencyManagement {
-    imports {
-        mavenBom "org.grails:grails-bom:$grailsVersion"
-    }
-    applyMavenExclusions false
+	imports {
+		mavenBom "org.grails:grails-bom:$grailsVersion"
+	}
+	applyMavenExclusions false
 }
 
 dependencies {
@@ -62,18 +62,21 @@ dependencies {
     compile "org.grails:grails-dependencies"
     compile "org.grails:grails-web-boot"
 
-    compile "org.grails.plugins:hibernate"
-    compile "org.grails.plugins:cache"
-    compile "org.hibernate:hibernate-ehcache"
-    compile "org.grails.plugins:scaffolding"
+	compile 'org.grails.plugins:hibernate'
+	compile 'org.grails.plugins:cache'
+	compile 'org.hibernate:hibernate-ehcache'
+	compile 'org.grails.plugins:scaffolding'
 
-    runtime "org.grails.plugins:asset-pipeline"
+	compile 'org.grails.plugins:spring-security-core:3.0.0.M2'
+	runtime 'org.grails.plugins:spring-security-appinfo:3.0.0.M1'
 
-    testCompile "org.grails:grails-plugin-testing"
-    testCompile "org.grails.plugins:geb"
+	runtime 'org.grails.plugins:asset-pipeline'
 
-    // Note: It is recommended to update to a more robust driver (Chrome, Firefox etc.)
-    testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
+	testCompile 'org.grails:grails-plugin-testing'
+	testCompile 'org.grails.plugins:geb'
+
+	// Note: It is recommended to update to a more robust driver (Chrome, Firefox etc.)
+	testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
 
     console "org.grails:grails-console"
 
@@ -83,5 +86,5 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = gradleWrapperVersion
+	gradleVersion = gradleWrapperVersion
 }
