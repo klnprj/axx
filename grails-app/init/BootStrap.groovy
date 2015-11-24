@@ -15,12 +15,7 @@ class BootStrap {
             def roleUser = new Role('ROLE_USER').save(failOnError: true)
             def user = new User('user', 'password').save(failOnError: true)
             UserRole.create user, roleUser
-
-            User.withSession {
-                it.flush()
-                it.clear()
-            }
-
+            
             new Camera(name: 'uno').save(flush: true, failOnError: true)
         }
 	}
